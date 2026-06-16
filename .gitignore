@@ -1,0 +1,45 @@
+# Virtual Environment
+backend/venv/
+backend/ENV/
+backend/env/
+
+# Python Cache & Compiled Code
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+backend/.pytest_cache/
+
+# Databases & Vector Indexes
+backend/*.db
+backend/*.db-journal
+backend/study_assistant_chroma/
+
+# Uploaded Files
+backend/uploads/
+
+# Dependency & Portable Binaries
+node.zip
+nodejs/
+
+# Frontend Build & Node Modules
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.pnpm-debug.log*
+
+# Environmental Credentials (Secrets)
+**/.env
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+**/.env.local
+
+# Operating System Files
+.DS_Store
+Thumbs.db

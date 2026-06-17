@@ -6,7 +6,7 @@ from fastapi import FastAPI, Depends, HTTPException, status, UploadFile, File, B
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 
-from app.database import engine, get_db, Base
+from app.database import engine, get_db, Base, SessionLocal
 from app import models, schemas, auth
 from app.services import pdf_processor, gemini_service
 
@@ -16,13 +16,17 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(title="AI Study Assistant API", version="1.0.0")
 
 # Setup uploads directory
-UPLOADS_DIR = r"C:\Users\madhu\.gemini\antigravity\scratch\ai-study-assistant\backend\uploads"
+UPLOADS_DIR = "uploads"
 os.makedirs(UPLOADS_DIR, exist_ok=True)
 
 # CORS middleware config
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust for production in real deployments
+    allow_origins=[
+        "https://ai-study-assistant-lyart.vercel.app",
+        "https://ai-study-assistant-git-main-althi-madhusowmya.vercel.app",
+        "http://localhost:3000"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

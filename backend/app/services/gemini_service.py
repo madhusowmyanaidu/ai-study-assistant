@@ -134,7 +134,7 @@ def get_rag_answer(document_id: Optional[int], query: str, chat_history: List[Di
     prompt += f"User: {query}\nAssistant:"
     
     try:
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-2.0-flash")
         response = model.generate_content(prompt)
         return response.text
     except Exception as e:

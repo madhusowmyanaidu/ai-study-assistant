@@ -1,6 +1,4 @@
-const API_BASE_URL = typeof window !== 'undefined' 
-  ? (localStorage.getItem('api_endpoint') || 'http://localhost:8000')
-  : 'http://localhost:8000';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 function getHeaders() {
   const headers: Record<string, string> = {
